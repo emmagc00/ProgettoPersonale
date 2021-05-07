@@ -40,11 +40,11 @@ public @Data class Film {
 	private Regista regista;
 	
 	@OneToMany(mappedBy = "film")
-	private List<Proiezione> prioezioni;
+	private List<Proiezione> proiezioni;
 	
 	public Film() {
 		this.attori = new LinkedList<Attore>();
-		this.prioezioni = new LinkedList<Proiezione>(); //può diventare una mappa?
+		this.proiezioni = new LinkedList<Proiezione>(); 
 	}
 
 }

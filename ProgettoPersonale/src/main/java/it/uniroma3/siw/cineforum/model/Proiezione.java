@@ -5,6 +5,7 @@ import java.time.LocalTime;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -39,7 +40,7 @@ public @Data class Proiezione {
 	@ManyToOne
 	private Film film;
 	
-	@OneToMany(mappedBy = "proiezione")
+	@OneToMany(mappedBy = "proiezione", cascade = {CascadeType.REMOVE})
 	private List<Prenotazione> prenotazioni;
 	
 	public Proiezione() {
